@@ -84,6 +84,10 @@ use Spatie\Tags\HasTags;
  * @property \Illuminate\Database\Eloquent\Collection<int, \PreemStudio\Conversations\Models\Participant> $participants
  * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
  * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \PreemStudio\Conversations\Models\Message>     $messages
+ * @property \Illuminate\Database\Eloquent\Collection<int, \PreemStudio\Conversations\Models\Participant> $participants
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
  *
  * @mixin \Eloquent
  */
@@ -113,7 +117,7 @@ final class Conversation extends Model
      */
     public function messages(): HasMany
     {
-        return $this->hasMany(Message::class);
+        return $this->hasMany(Config::get('conversations.models.message'));
     }
 
     /**
@@ -121,7 +125,7 @@ final class Conversation extends Model
      */
     public function participants(): HasMany
     {
-        return $this->hasMany(Participant::class);
+        return $this->hasMany(Config::get('conversations.models.participant'));
     }
 
     public function author(): Model

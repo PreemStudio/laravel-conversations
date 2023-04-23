@@ -47,7 +47,7 @@ final class Participant extends Model
      */
     public function conversation(): BelongsTo
     {
-        return $this->belongsTo(Conversation::class);
+        return $this->belongsTo(Config::get('conversations.models.conversation'));
     }
 
     /**

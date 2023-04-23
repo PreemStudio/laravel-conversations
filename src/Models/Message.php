@@ -43,6 +43,7 @@ use Spatie\PrefixedIds\Models\Concerns\HasPrefixedId;
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
+ * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection<int, \Spatie\MediaLibrary\MediaCollections\Models\Media> $media
  *
  * @mixin \Eloquent
  */
@@ -69,7 +70,7 @@ final class Message extends Model implements HasMedia
      */
     public function conversation(): BelongsTo
     {
-        return $this->belongsTo(Conversation::class);
+        return $this->belongsTo(Config::get('conversations.models.conversation'));
     }
 
     /**
@@ -77,7 +78,7 @@ final class Message extends Model implements HasMedia
      */
     public function author(): MorphTo
     {
-        return $this->morphTo('author');
+        return $this->morphTo();
     }
 
     /**

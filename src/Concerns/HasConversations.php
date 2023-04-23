@@ -6,15 +6,14 @@ namespace PreemStudio\Conversations\Concerns;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use PreemStudio\Conversations\Models\Conversation;
-use PreemStudio\Conversations\Models\Message;
+use Illuminate\Support\Facades\Config;
 
 trait HasConversations
 {
     public function conversations(): MorphToMany
     {
         return $this
-            ->morphToMany(Conversation::class, 'model', 'participants')
+            ->morphToMany(Config::get('conversations.models.conversation'), 'model', 'participants')
             ->withPivot('last_read_at', 'deleted_at');
     }
 
@@ -27,6 +26,6 @@ trait HasConversations
 
     public function messages(): MorphMany
     {
-        return $this->morphMany(Message::class, 'author');
+        return $this->morphMany(Config::get('conversations.models.message'), 'author');
     }
 }
