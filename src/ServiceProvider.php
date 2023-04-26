@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Conversations;
 
-use Illuminate\Support\Facades\Config;
 use BombenProdukt\PackagePowerPack\Package\AbstractServiceProvider;
+use Illuminate\Support\Facades\Config;
 use Spatie\PrefixedIds\PrefixedIds;
 
 final class ServiceProvider extends AbstractServiceProvider

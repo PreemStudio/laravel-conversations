@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Conversations\Models\Concerns;
 
+use BombenProdukt\Conversations\Models\Conversation;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use BombenProdukt\Conversations\Models\Conversation;
 
 trait HasQueryScopes
 {

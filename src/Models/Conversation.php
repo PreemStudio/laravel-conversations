@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Conversations\Models;
 
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Config;
 use BombenProdukt\Conversations\Database\Factories\ConversationFactory;
 use BombenProdukt\Conversations\Models\Concerns\HasCategories;
 use BombenProdukt\Conversations\Models\Concerns\HasLabels;
@@ -22,72 +14,80 @@ use BombenProdukt\Conversations\Models\Concerns\HasSeverity;
 use BombenProdukt\Conversations\Models\Concerns\HasSlug;
 use BombenProdukt\Conversations\Models\Concerns\HasStatuses;
 use BombenProdukt\Conversations\Models\Concerns\HasType;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
 use Spatie\PrefixedIds\Models\Concerns\HasPrefixedId;
 use Spatie\Tags\HasTags;
 
 /**
  * BombenProdukt\Conversations\Models\Conversation
  *
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                currentStatus(...$names)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  currentStatus(...$names)
  * @method static \BombenProdukt\Conversations\Database\Factories\ConversationFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                otherCurrentStatus(...$names)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                query()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withAllTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withAllTagsOfAnyType($tags)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withAnyTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withAnyTagsOfAnyType($tags)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withExtraAttributes()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withoutParticipant(\Illuminate\Database\Eloquent\Model $participant)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withoutTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withoutTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withParticipant(\Illuminate\Database\Eloquent\Model $participant)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withPriority(string $priority)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withSubType(string $subtype)
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Conversation                withType(string $type)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  otherCurrentStatus(...$names)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withAllTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withAllTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withAnyTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withAnyTagsOfAnyType($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withExtraAttributes()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withoutParticipant(\Illuminate\Database\Eloquent\Model $participant)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withoutTags(array|\ArrayAccess|\Spatie\Tags\Tag|string $tags, ?string $type = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withParticipant(\Illuminate\Database\Eloquent\Model $participant)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withPriority(string $priority)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withSubType(string $subtype)
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Conversation                  withType(string $type)
  *
- * @property \Spatie\SchemalessAttributes\SchemalessAttributes                                            $extra_attributes
+ * @property \Spatie\SchemalessAttributes\SchemalessAttributes                                              $extra_attributes
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
- * @property null|int                                                                                     $messages_count
+ * @property null|int                                                                                       $messages_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property null|int                                                                                     $participants_count
- * @property null|string                                                                                  $prefixed_id
- * @property string                                                                                       $status
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
- * @property null|int                                                                                     $statuses_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property null|int                                                                                     $tags_count
- * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
- * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property null|int                                                                                       $participants_count
+ * @property null|string                                                                                    $prefixed_id
+ * @property string                                                                                         $status
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
+ * @property null|int                                                                                       $statuses_count
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property null|int                                                                                       $tags_count
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
  * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                              $tags
- * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                    $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
+ * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Message>     $messages
+ * @property \Illuminate\Database\Eloquent\Collection<int, \BombenProdukt\Conversations\Models\Participant> $participants
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\Tags\Tag>                                $tags
+ * @property \Illuminate\Database\Eloquent\Collection<int, \Spatie\ModelStatus\Status>                      $statuses
  *
  * @mixin \Eloquent
  */

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Config;
 use BombenProdukt\Conversations\Models\Conversation;
 use BombenProdukt\PackagePowerPack\TestBench\AbstractPackageTestCase;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Config;
 use Spatie\ModelStatus\ModelStatusServiceProvider;
 use Spatie\SchemalessAttributes\SchemalessAttributesServiceProvider;
 use Spatie\Tags\TagsServiceProvider;

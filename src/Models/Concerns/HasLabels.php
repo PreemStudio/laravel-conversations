@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Conversations\Models\Concerns;
 
-use Illuminate\Database\Eloquent\Collection;
 use BombenProdukt\Conversations\Enum\ConversationTagType;
+use Illuminate\Database\Eloquent\Collection;
 use Spatie\Tags\Tag;
 
 trait HasLabels

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Models;
 
-use Illuminate\Support\Collection;
 use BombenProdukt\Conversations\Models\Conversation;
 use BombenProdukt\Conversations\Models\Message;
 use BombenProdukt\Conversations\Models\Participant;
+use Illuminate\Support\Collection;
 use Tests\Fixtures\User;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;

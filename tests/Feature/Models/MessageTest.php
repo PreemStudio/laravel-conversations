@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use BombenProdukt\Conversations\Models\Conversation;
 use BombenProdukt\Conversations\Models\Message;
 use BombenProdukt\Conversations\Models\Participant;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Tests\Fixtures\User;
 
 it('can create a message with factory', function (): void {

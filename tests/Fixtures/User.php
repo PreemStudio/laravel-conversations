@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Fixtures;
 
+use BombenProdukt\Conversations\Concerns\HasConversations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use BombenProdukt\Conversations\Concerns\HasConversations;
 
 final class User extends Model
 {

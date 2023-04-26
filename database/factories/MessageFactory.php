@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Conversations\Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
 use BombenProdukt\Conversations\Models\Conversation;
 use BombenProdukt\Conversations\Models\Message;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Tests\Fixtures\User;
 
 /**
