@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/laravel-conversations/actions">
-        <img src="https://badge.sh/github/check-runs/BombenProdukt/laravel-conversations" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-conversations">
-        <img src="https://badge.sh/packagist/downloads/BombenProdukt/laravel-conversations" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-conversations">
-        <img src="https://badge.sh/packagist/version/BombenProdukt/laravel-conversations" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-conversations">
-        <img src="https://badge.sh/packagist/license/BombenProdukt/laravel-conversations" alt="License" />
-    </a>
-</p>
 
 ## About Laravel Conversations
 
