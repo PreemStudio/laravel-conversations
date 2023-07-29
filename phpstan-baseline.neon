@@ -66,7 +66,37 @@ parameters:
 			path: src/Models/Conversation.php
 
 		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Message\\>\\:\\:first\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Message\\>\\:\\:oldest\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:cursor\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:firstOrFail\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:where\\(\\)\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
 			count: 1
 			path: src/Models/Conversation.php
 
@@ -141,7 +171,22 @@ parameters:
 			path: src/Models/Message.php
 
 		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:where\\(\\)\\.$#"
+			count: 2
+			path: src/Models/Message.php
+
+		-
 			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$touches is not the same as PHPDoc type array of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$touches\\.$#"
 			count: 1
 			path: src/Models/Message.php
 
@@ -162,6 +207,11 @@ parameters:
 
 		-
 			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Participant.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
 			count: 1
 			path: src/Models/Participant.php
 
