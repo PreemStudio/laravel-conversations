@@ -1,0 +1,72 @@
+{
+    "name": "basecodeoy/laravel-conversations",
+    "description": "A package to make use of type-based conversations with Laravel.",
+    "license": "MIT",
+    "keywords": [
+        "BaseCode Oy",
+        "laravel",
+        "laravel-conversations"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/basecodeoy/laravel-conversations",
+    "require": {
+        "php": "^8.3",
+        "basecodeoy/laravel-package-powerpack": "^1.0.0",
+        "illuminate/contracts": "^11.0",
+        "illuminate/database": "^11.0",
+        "illuminate/support": "^11.0",
+        "spatie/laravel-medialibrary": "^11.10.1",
+        "spatie/laravel-model-status": "^1.18",
+        "spatie/laravel-prefixed-ids": "^1.4",
+        "spatie/laravel-schemaless-attributes": "^2.5",
+        "spatie/laravel-sluggable": "^3.6",
+        "spatie/laravel-tags": "^4.7"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.2.2",
+        "basecodeoy/standards": "^1.0.5"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "BaseCodeOy\\Conversations\\": "src",
+            "BaseCodeOy\\Conversations\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BaseCodeOy\\Conversations\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix",
+        "ide-helper:models": "@php ./vendor/bin/testbench ide-helper:models --dir='src/Models' --write",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
+}
