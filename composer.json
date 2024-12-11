@@ -1,0 +1,73 @@
+{
+    "name": "basecodeoy/conversations",
+    "description": "A package to make use of type-based conversations with Laravel.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "BaseCode Oy",
+        "laravel",
+        "conversations"
+    ],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/basecodeoy/conversations",
+    "support": {
+        "issues": "https://github.com/basecodeoy/conversations/issues",
+        "source": "https://github.com/basecodeoy/conversations",
+        "security": "https://github.com/basecodeoy/conversations/blob/main/.github/SECURITY.md"
+    },
+    "require": {
+        "php": "^8.3",
+        "basecodeoy/crate": "^1.0.0",
+        "illuminate/contracts": "^11.0",
+        "illuminate/database": "^11.0",
+        "illuminate/support": "^11.0",
+        "nesbot/carbon": "^2.72",
+        "spatie/laravel-medialibrary": "^11.11.0",
+        "spatie/laravel-model-status": "^1.18",
+        "spatie/laravel-prefixed-ids": "^1.4",
+        "spatie/laravel-schemaless-attributes": "^2.5",
+        "spatie/laravel-sluggable": "^3.7",
+        "spatie/laravel-tags": "^4.7.2"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.2.2",
+        "basecodeoy/standards": "^1.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "BaseCodeOy\\Conversations\\": "src",
+            "BaseCodeOy\\Conversations\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true,
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        },
+        "audit": {
+            "abandoned": "report"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BaseCodeOy\\Conversations\\ServiceProvider"
+            ]
+        }
+    }
+}
