@@ -1,0 +1,221 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationPriority\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationPriority but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationPriority\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationPriority.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSeverity\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSeverity but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSeverity\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationSeverity.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationStatus\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationStatus but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationStatus\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationStatus.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSubType\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSubType but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSubType\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationSubType.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationTagType\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationTagType but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationTagType\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationTagType.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationType\\:\\:fromString\\(\\) should return BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationType but returns BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationType\\|null\\.$#"
+			count: 1
+			path: src/Enum/ConversationType.php
+
+		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$id\\.$#"
+			count: 4
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\<BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\>\\:\\:participants\\(\\)\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Cannot access constant class on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Cannot access property \\$author on BombenProdukt\\\\Conversations\\\\Models\\\\Message\\|null\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Cannot access property \\$id on Illuminate\\\\Database\\\\Eloquent\\\\Model\\|null\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Cannot access property \\$name on Spatie\\\\ModelStatus\\\\Status\\|null\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Cannot call method update\\(\\) on mixed\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Message\\>\\:\\:first\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Message\\>\\:\\:oldest\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:cursor\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:firstOrFail\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:where\\(\\)\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Parameter \\#1 \\$related of method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:hasMany\\(\\) expects string, mixed given\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationPriority\\:\\:fromString\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSeverity\\:\\:fromString\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationSubType\\:\\:fromString\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Parameter \\#1 \\$value of static method BombenProdukt\\\\Conversations\\\\Enum\\\\ConversationType\\:\\:fromString\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'author_id' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Message model\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'author_type' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Message model\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'body' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Message model\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'last_read_at' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Participant model\\.$#"
+			count: 1
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'model_id' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Participant model\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Property 'model_type' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Participant model\\.$#"
+			count: 2
+			path: src/Models/Conversation.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$author_id\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Access to an undefined property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$author_type\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Cannot call method participants\\(\\) on BombenProdukt\\\\Conversations\\\\Models\\\\Conversation\\|null\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Dynamic call to static method Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany\\<BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\>\\:\\:where\\(\\)\\.$#"
+			count: 2
+			path: src/Models/Message.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Message\\:\\:\\$touches is not the same as PHPDoc type array of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$touches\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Parameter \\#1 \\$related of method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:belongsTo\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Property 'model_id' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Participant model\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Property 'model_type' does not exist in BombenProdukt\\\\Conversations\\\\Models\\\\Participant model\\.$#"
+			count: 1
+			path: src/Models/Message.php
+
+		-
+			message: "#^Method BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Participant.php
+
+		-
+			message: "#^PHPDoc type array\\<string\\> of property BombenProdukt\\\\Conversations\\\\Models\\\\Participant\\:\\:\\$guarded is not the same as PHPDoc type array\\<string\\>\\|bool of overridden property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$guarded\\.$#"
+			count: 1
+			path: src/Models/Participant.php
+
+		-
+			message: "#^Parameter \\#1 \\$related of method Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:belongsTo\\(\\) expects string, mixed given\\.$#"
+			count: 1
+			path: src/Models/Participant.php
