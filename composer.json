@@ -36,7 +36,7 @@
         "spatie/laravel-tags": "^4.7.2"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.4.0",
+        "barryvdh/laravel-ide-helper": "^3.5.2",
         "basecodeoy/standards": "^1.1.1"
     },
     "autoload": {
